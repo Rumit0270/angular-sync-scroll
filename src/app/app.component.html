@@ -1,0 +1,237 @@
+<h1>Synchronous Scroll (Native)</h1>
+
+<div class="top" appNativeScrollSync [scrollTargetIds]="['first', 'second']">
+  <div id="first" class="container">
+    <span class="item">1</span>
+    <span class="item">2</span>
+    <span class="item">3</span>
+    <span class="item">4</span>
+    <span class="item">5</span>
+    <span class="item">6</span>
+    <span class="item">7</span>
+    <span class="item">8</span>
+    <span class="item">9</span>
+    <span class="item">10</span>
+    <span class="item">11</span>
+    <span class="item">12</span>
+    <span class="item">13</span>
+    <span class="item">14</span>
+    <span class="item">15</span>
+    <span class="item">16</span>
+    <span class="item">17</span>
+    <span class="item">18</span>
+    <span class="item">19</span>
+    <span class="item">20</span>
+    <span class="item">21</span>
+    <span class="item">22</span>
+    <span class="item">23</span>
+    <span class="item">24</span>
+    <span class="item">25</span>
+    <span class="item">26</span>
+    <span class="item">27</span>
+    <span class="item">28</span>
+    <span class="item">29</span>
+    <span class="item">30</span>
+  </div>
+
+  <div id="second" class="container">
+    <span class="item">1</span>
+    <span class="item">2</span>
+    <span class="item">3</span>
+    <span class="item">4</span>
+    <span class="item">5</span>
+    <span class="item">6</span>
+    <span class="item">7</span>
+    <span class="item">8</span>
+    <span class="item">9</span>
+    <span class="item">10</span>
+    <span class="item">11</span>
+    <span class="item">12</span>
+    <span class="item">13</span>
+    <span class="item">14</span>
+    <span class="item">15</span>
+    <span class="item">16</span>
+    <span class="item">17</span>
+    <span class="item">18</span>
+    <span class="item">19</span>
+    <span class="item">20</span>
+    <span class="item">21</span>
+    <span class="item">22</span>
+    <span class="item">23</span>
+    <span class="item">24</span>
+    <span class="item">25</span>
+    <span class="item">26</span>
+    <span class="item">27</span>
+    <span class="item">28</span>
+    <span class="item">29</span>
+    <span class="item">30</span>
+  </div>
+</div>
+
+<h2>Synchronous Scroll (IScroll)</h2>
+
+<div
+  class="bottom"
+  appIscrollSync
+  [scrollGroup]="[['third-iscroll', 'fourth-iscroll']]"
+>
+  <div
+    class="scrollable"
+    appScroll
+    [options]="{ scrollX: true, scrollY: true, scrollbars: false }"
+  >
+    <div class="wrapper">
+      <span class="number">1</span>
+      <span class="number">2</span>
+      <span class="number">3</span>
+      <span class="number">4</span>
+      <span class="number">5</span>
+      <span class="number">6</span>
+      <span class="number">7</span>
+      <span class="number">8</span>
+      <span class="number">9</span>
+      <span class="number">10</span>
+      <span class="number">11</span>
+      <span class="number">12</span>
+      <span class="number">13</span>
+      <span class="number">14</span>
+      <span class="number">15</span>
+      <span class="number">16</span>
+      <span class="number">17</span>
+      <span class="number">18</span>
+      <span class="number">19</span>
+      <span class="number">20</span>
+      <span class="number">21</span>
+      <span class="number">22</span>
+      <span class="number">23</span>
+      <span class="number">24</span>
+      <span class="number">25</span>
+      <span class="number">26</span>
+      <span class="number">27</span>
+      <span class="number">28</span>
+      <span class="number">29</span>
+      <span class="number">30</span>
+    </div>
+  </div>
+
+  <div
+    class="scrollable"
+    appScroll
+    [options]="{ scrollX: true, scrollY: true }"
+  >
+    <div class="wrapper">
+      <span class="number">1</span>
+      <span class="number">2</span>
+      <span class="number">3</span>
+      <span class="number">4</span>
+      <span class="number">5</span>
+      <span class="number">6</span>
+      <span class="number">7</span>
+      <span class="number">8</span>
+      <span class="number">9</span>
+      <span class="number">10</span>
+      <span class="number">11</span>
+      <span class="number">12</span>
+      <span class="number">13</span>
+      <span class="number">14</span>
+      <span class="number">15</span>
+      <span class="number">16</span>
+      <span class="number">17</span>
+      <span class="number">18</span>
+      <span class="number">19</span>
+      <span class="number">20</span>
+      <span class="number">21</span>
+      <span class="number">22</span>
+      <span class="number">23</span>
+      <span class="number">24</span>
+      <span class="number">25</span>
+      <span class="number">26</span>
+      <span class="number">27</span>
+      <span class="number">28</span>
+      <span class="number">29</span>
+      <span class="number">30</span>
+    </div>
+  </div>
+
+  <div class="spacing"></div>
+
+  <div
+    class="scrollable"
+    appScroll
+    scrollId="third-iscroll"
+    [options]="{ scrollX: true, scrollY: true, scrollbars: false }"
+  >
+    <div class="wrapper">
+      <span class="number">1</span>
+      <span class="number">2</span>
+      <span class="number">3</span>
+      <span class="number">4</span>
+      <span class="number">5</span>
+      <span class="number">6</span>
+      <span class="number">7</span>
+      <span class="number">8</span>
+      <span class="number">9</span>
+      <span class="number">10</span>
+      <span class="number">11</span>
+      <span class="number">12</span>
+      <span class="number">13</span>
+      <span class="number">14</span>
+      <span class="number">15</span>
+      <span class="number">16</span>
+      <span class="number">17</span>
+      <span class="number">18</span>
+      <span class="number">19</span>
+      <span class="number">20</span>
+      <span class="number">21</span>
+      <span class="number">22</span>
+      <span class="number">23</span>
+      <span class="number">24</span>
+      <span class="number">25</span>
+      <span class="number">26</span>
+      <span class="number">27</span>
+      <span class="number">28</span>
+      <span class="number">29</span>
+      <span class="number">30</span>
+    </div>
+  </div>
+
+  <div
+    class="scrollable"
+    appScroll
+    scrollId="fourth-iscroll"
+    [options]="{ scrollX: true, scrollY: true }"
+  >
+    <div class="wrapper">
+      <span class="number">1</span>
+      <span class="number">2</span>
+      <span class="number">3</span>
+      <span class="number">4</span>
+      <span class="number">5</span>
+      <span class="number">6</span>
+      <span class="number">7</span>
+      <span class="number">8</span>
+      <span class="number">9</span>
+      <span class="number">10</span>
+      <span class="number">11</span>
+      <span class="number">12</span>
+      <span class="number">13</span>
+      <span class="number">14</span>
+      <span class="number">15</span>
+      <span class="number">16</span>
+      <span class="number">17</span>
+      <span class="number">18</span>
+      <span class="number">19</span>
+      <span class="number">20</span>
+      <span class="number">21</span>
+      <span class="number">22</span>
+      <span class="number">23</span>
+      <span class="number">24</span>
+      <span class="number">25</span>
+      <span class="number">26</span>
+      <span class="number">27</span>
+      <span class="number">28</span>
+      <span class="number">29</span>
+      <span class="number">30</span>
+    </div>
+  </div>
+</div>

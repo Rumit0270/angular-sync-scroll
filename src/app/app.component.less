@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text-color: red;
+}
+
+.top {
+  margin-bottom: 80px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  flex-basis: 80px;
+  height: 80px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.scrollable {
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  width: max-content;
+}
+
+.number {
+  border: 1px solid #000;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 80px;
+}
+
+.spacing {
+  width: 100%;
+  height: 2px;
+  margin: 16px 0;
+}
+
+// .scrollable {
+//   position: relative;
+//   overflow: hidden;
+//   height: 100%;
+
+//   .iScrollVerticalScrollbar {
+//     position: absolute;
+//     top: 10px;
+//     right: 5px;
+//     border-radius: 3px;
+//     width: 3px;
+
+//     .iScrollIndicator {
+//       background: var(--text-color);
+//     }
+//   }
+
+//   .iScrollHorizontalScrollbar {
+//     position: absolute;
+//     top: 10px;
+//     right: 5px;
+//     border-radius: 3px;
+//     width: 3px;
+
+//     .iScrollIndicator {
+//       background: var(--text-color);
+//     }
+//   }
+// }
