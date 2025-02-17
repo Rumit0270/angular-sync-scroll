@@ -1,0 +1,40 @@
+.item {
+  border: 1px solid #000;
+  width: 80px;
+  height: 80px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 80px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollable {
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  width: max-content;
+}
+
+.divider {
+  margin: 20px 0;
+}
+
+// Vertical styles
+
+.scrollable-y {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.wrapper-y {
+  display: flex;
+  flex-direction: column;
+}

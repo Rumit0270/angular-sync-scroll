@@ -6,6 +6,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class NativeScrollSyncDirective {
   @Input({ required: true }) scrollTargetIds: string[] = [];
+  @Input() syncAxis: 'both' | 'horizontal' | 'vertical' = 'both';
 
   constructor(private _ref: ElementRef) {}
 
@@ -27,6 +28,14 @@ export class NativeScrollSyncDirective {
     this.scrollElements
       .filter((_, i) => i !== index)
       .forEach((el) => {
+        if (this.syncAxis === 'both' || this.syncAxis === 'horizontal') {
+          el.scrollLeft = target.scrollLeft;
+        }
+
+        if (this.syncAxis === 'both' || this.syncAxis === 'vertical') {
+          el.scrollTop = target.scrollTop;
+        }
+
         el.scrollLeft = target.scrollLeft;
       });
   }

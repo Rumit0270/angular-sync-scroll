@@ -7,7 +7,3 @@
 1. `appNativeScrollSync`: Directive can be used to synchronously scroll native scrollbars
 
 2. `appIscrollSync`: Directive can be used to synchronously scroll multiple iscrolls
-
-## TODO
-
-- Right now only horizontal synchronous scrolling is supported. Need to add logic for vertical scrolling

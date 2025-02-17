@@ -46,8 +46,10 @@ export class ScrollDirective implements AfterViewInit, OnDestroy {
       hideScrollbar: false,
       snap: false,
       momentum: true,
-      ...this.options,
       probeType: 3,
+      scrollX: true,
+      scrollY: true,
+      ...this.options,
     });
 
     this._scroll.on('scroll', () => {

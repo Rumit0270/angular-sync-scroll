@@ -5,7 +5,7 @@ import {
   DestroyRef,
   ContentChildren,
 } from '@angular/core';
-import { ScrollDirective } from '../../scroll/scroll.directive';
+import { ScrollDirective } from '../scroll/scroll.directive';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
@@ -17,6 +17,8 @@ export class IscrollSyncDirective {
   scrollDirectives!: QueryList<ScrollDirective>;
 
   @Input() scrollGroup: string[][] = [];
+
+  @Input() syncAxis: 'both' | 'horizontal' | 'vertical' = 'both';
 
   constructor(private _destroyRef: DestroyRef) {}
 
@@ -63,28 +65,6 @@ export class IscrollSyncDirective {
     scrollsWithGroup.forEach((group) => {
       this.listenForScrollInGroup(group);
     });
-
-    // this.scrollDirectives.forEach((directive) => {
-    //   console.log(directive.scrollId);
-
-    //   directive.scroll
-    //     .pipe(takeUntilDestroyed(this._destroyRef))
-    //     .subscribe((scroll) => {
-    //       // Horizontal scroll
-
-    //       const point = {
-    //         x: scroll.x,
-    //         y: 0,
-    //       };
-
-    //       this.scrollDirectives
-    //         .filter((d) => d !== directive)
-    //         .forEach((d) => {
-    //           d.scrollTo(point);
-    //           d.refresh();
-    //         });
-    //     });
-    // });
   }
 
   private listenForScrollInGroup(scrollGroup: ScrollDirective[]) {
@@ -92,11 +72,27 @@ export class IscrollSyncDirective {
       directive.scroll
         .pipe(takeUntilDestroyed(this._destroyRef))
         .subscribe((scroll) => {
-          // Horizontal scroll
-          const point = {
-            x: scroll.x,
-            y: 0,
-          };
+          let point = { x: 0, y: 0 };
+
+          if (this.syncAxis === 'horizontal') {
+            // Horizontal scroll
+            point = {
+              x: scroll.x,
+              y: 0,
+            };
+          } else if (this.syncAxis === 'vertical') {
+            // Vertical scroll
+            point = {
+              x: 0,
+              y: scroll.y,
+            };
+          } else {
+            // Both
+            point = {
+              x: scroll.x,
+              y: scroll.y,
+            };
+          }
 
           scrollGroup
             .filter((d) => d !== directive)

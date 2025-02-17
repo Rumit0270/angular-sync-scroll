@@ -1,0 +1,35 @@
+<h1 class="title">Horizontal</h1>
+
+<div appNativeScrollSync [scrollTargetIds]="['first', 'second']">
+  <div id="first" class="container container-x">
+    <ng-container *ngFor="let item of items">
+      <span class="item">{{ item }}</span>
+    </ng-container>
+  </div>
+
+  <div class="separator-y"></div>
+
+  <div id="second" class="container container-x">
+    <ng-container *ngFor="let item of items">
+      <span class="item">{{ item }}</span>
+    </ng-container>
+  </div>
+</div>
+
+<h1 class="title">Vertical</h1>
+
+<div appNativeScrollSync [scrollTargetIds]="['third', 'fourth']" class="d-flex">
+  <div id="third" class="container container-y">
+    <ng-container *ngFor="let item of items">
+      <span class="item">{{ item }}</span>
+    </ng-container>
+  </div>
+
+  <div class="separator-x"></div>
+
+  <div id="fourth" class="container container-y">
+    <ng-container *ngFor="let item of items">
+      <span class="item">{{ item }}</span>
+    </ng-container>
+  </div>
+</div>

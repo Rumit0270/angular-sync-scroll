@@ -1,0 +1,81 @@
+<h1 class="title">Horizontal</h1>
+
+<div appIscrollSync [scrollGroup]="[['third-iscroll', 'fourth-iscroll']]">
+  <div
+    class="scrollable"
+    appScroll
+    [options]="{ scrollX: true, scrollbars: false }"
+  >
+    <div class="wrapper">
+      <ng-container *ngFor="let item of items">
+        <span class="item">{{ item }}</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="separator-y"></div>
+
+  <div class="scrollable" appScroll [options]="{ scrollX: true }">
+    <div class="wrapper">
+      <ng-container *ngFor="let item of items">
+        <span class="item">{{ item }}</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div
+    class="scrollable"
+    appScroll
+    scrollId="third-iscroll"
+    [options]="{ scrollX: true, scrollY: true, scrollbars: false }"
+  >
+    <div class="wrapper">
+      <ng-container *ngFor="let item of items">
+        <span class="item">{{ item }}</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="separator-y"></div>
+
+  <div
+    class="scrollable"
+    appScroll
+    scrollId="fourth-iscroll"
+    [options]="{ scrollX: true, scrollY: true }"
+  >
+    <div class="wrapper">
+      <ng-container *ngFor="let item of items">
+        <span class="item">{{ item }}</span>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<h1 class="title">Vertical</h1>
+
+<div appIscrollSync>
+  <div
+    class="scrollable-y"
+    appScroll
+    [options]="{ scrollX: true, scrollbars: false }"
+  >
+    <div class="wrapper-y">
+      <ng-container *ngFor="let item of items">
+        <span class="item">{{ item }}</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="separator-x"></div>
+
+  <div class="scrollable-y" appScroll [options]="{ scrollX: true }">
+    <div class="wrapper-y">
+      <ng-container *ngFor="let item of items">
+        <span class="item">{{ item }}</span>
+      </ng-container>
+    </div>
+  </div>
+</div>
