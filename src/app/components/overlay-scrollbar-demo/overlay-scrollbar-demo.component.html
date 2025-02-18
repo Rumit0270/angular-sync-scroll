@@ -1,0 +1,90 @@
+<div class="demo-container">
+  <div>
+    <h3>Vertical Scroll</h3>
+
+    <div class="scroll-container" appOverlayScrollSync>
+      <div
+        appOverlayScroll
+        scrollId="first-vertical"
+        syncAxis="vertical"
+        class="vertical-scroll"
+      >
+        <div *ngFor="let item of items" class="scroll-item">
+          {{ item }}
+        </div>
+      </div>
+
+      <div
+        appOverlayScroll
+        scrollId="second-vertical"
+        syncAxis="vertical"
+        class="vertical-scroll"
+      >
+        <div *ngFor="let item of items" class="scroll-item">
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horizontal Scrolling Example -->
+  <div>
+    <h3>Horizontal Scroll</h3>
+
+    <div class="scroll-container" appOverlayScrollSync>
+      <div
+        appOverlayScroll
+        scrollId="first-horizontal"
+        syncAxis="horizontal"
+        class="horizontal-scroll"
+      >
+        <div class="horizontal-content">
+          <div *ngFor="let item of items" class="horizontal-item">
+            {{ item }}
+          </div>
+        </div>
+      </div>
+
+      <div
+        appOverlayScroll
+        scrollId="first-horizontal"
+        syncAxis="horizontal"
+        class="horizontal-scroll"
+      >
+        <div class="horizontal-content">
+          <div *ngFor="let item of items" class="horizontal-item">
+            {{ item }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Both Directions Example -->
+
+  <div>
+    <h3>Both</h3>
+
+    <div class="scroll-container" appOverlayScrollSync>
+      <div appOverlayScroll scrollId="first-both" class="both-scroll">
+        <div class="both-content">
+          <table>
+            <tr *ngFor="let row of tableData">
+              <td *ngFor="let cell of row">{{ cell }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div appOverlayScroll scrollId="second-both" class="both-scroll">
+        <div class="both-content">
+          <table>
+            <tr *ngFor="let row of tableData">
+              <td *ngFor="let cell of row">{{ cell }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

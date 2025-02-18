@@ -35,8 +35,6 @@ export class NativeScrollSyncDirective {
         if (this.syncAxis === 'both' || this.syncAxis === 'vertical') {
           el.scrollTop = target.scrollTop;
         }
-
-        el.scrollLeft = target.scrollLeft;
       });
   }
 
