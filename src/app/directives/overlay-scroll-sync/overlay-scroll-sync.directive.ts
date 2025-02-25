@@ -1,12 +1,12 @@
 import {
-  ContentChildren,
-  DestroyRef,
-  Directive,
   Input,
   QueryList,
+  DestroyRef,
+  Directive,
+  ContentChildren,
 } from '@angular/core';
-import { OverlayScrollDirective } from '../overlay-scroll/overlay-scroll.directive';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { OverlayScrollDirective } from '../overlay-scroll/overlay-scroll.directive';
 
 @Directive({
   selector: '[appOverlayScrollSync]',
@@ -72,34 +72,33 @@ export class OverlayScrollSyncDirective {
       directive.scroll
         .pipe(takeUntilDestroyed(this._destroyRef))
         .subscribe(({ x, y }) => {
-          let point = { x: 0, y: 0 };
-
-          if (this.syncAxis === 'horizontal') {
-            // Horizontal scroll
-            point = {
-              x: x,
-              y: 0,
-            };
-          } else if (this.syncAxis === 'vertical') {
-            // Vertical scroll
-            point = {
-              x: 0,
-              y: y,
-            };
-          } else {
-            // Both
-            point = {
-              x,
-              y,
-            };
-          }
-
           scrollGroup
             .filter((d) => d !== directive)
             .forEach((d) => {
+              const currentPosition = d.currentPosition;
+
+              if (!currentPosition) {
+                return;
+              }
+
+              const point = {
+                x: currentPosition.scrollLeft,
+                y: currentPosition.scrollTop,
+              };
+
+              if (this.syncAxis === 'horizontal') {
+                // Horizontal scroll
+                point.x = x;
+              } else if (this.syncAxis === 'vertical') {
+                // Vertical scroll
+                point.y = y;
+              } else {
+                // Both
+                point.x = x;
+                point.y = y;
+              }
+
               d.scrollTo(point);
-              // d.scrollTo(point);
-              // d.refresh();
             });
         });
     });

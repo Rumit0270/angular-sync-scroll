@@ -1,11 +1,11 @@
 import {
+  Input,
+  Output,
+  OnInit,
   Directive,
+  OnDestroy,
   ElementRef,
   EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
 } from '@angular/core';
 import {
   OverlayScrollbars,
@@ -67,6 +67,19 @@ export class OverlayScrollDirective implements OnInit, OnDestroy {
 
       this.scroll.emit(position);
     });
+  }
+
+  public get currentPosition() {
+    if (!this.osInstance) {
+      return null;
+    }
+
+    const { scrollLeft, scrollTop } = this.osInstance.elements().viewport;
+
+    return {
+      scrollLeft,
+      scrollTop,
+    };
   }
 
   public scrollTo(point: { x: number; y: number }) {
