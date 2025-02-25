@@ -18,7 +18,6 @@ import {
 })
 export class OverlayScrollDirective implements OnInit, OnDestroy {
   @Input({ required: true }) scrollId!: string;
-  @Input() syncAxis: 'both' | 'horizontal' | 'vertical' = 'both';
   @Input() options?: Partial<OverlayScrollbarsOptions> = {};
 
   @Output() scroll = new EventEmitter<{ x: number; y: number }>();
@@ -32,15 +31,6 @@ export class OverlayScrollDirective implements OnInit, OnDestroy {
   }
 
   private initializeScroll() {
-    let x = 'scroll';
-    let y = 'scroll';
-
-    if (this.syncAxis === 'horizontal') {
-      y = 'hidden';
-    } else if (this.syncAxis === 'vertical') {
-      x = 'hidden';
-    }
-
     const defaultOptions: any = {
       scrollbars: {
         autoHide: 'never',
@@ -49,8 +39,8 @@ export class OverlayScrollDirective implements OnInit, OnDestroy {
         dragScroll: true,
       },
       overflow: {
-        x,
-        y,
+        x: 'scroll',
+        y: 'scroll',
       },
     };
 

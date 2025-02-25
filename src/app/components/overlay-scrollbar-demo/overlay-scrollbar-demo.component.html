@@ -1,12 +1,12 @@
 <div class="demo-container">
+  <!-- Vertical Scrolling Example -->
   <div>
     <h3>Vertical Scroll</h3>
 
     <div class="scroll-container" appOverlayScrollSync>
       <div
-        appOverlayScroll
-        scrollId="first-vertical"
-        syncAxis="vertical"
+        overlay-scrollbars
+        id="first-scroll-container"
         class="vertical-scroll"
       >
         <div *ngFor="let item of items" class="scroll-item">
@@ -15,9 +15,8 @@
       </div>
 
       <div
-        appOverlayScroll
-        scrollId="second-vertical"
-        syncAxis="vertical"
+        overlay-scrollbars
+        id="second-scroll-container"
         class="vertical-scroll"
       >
         <div *ngFor="let item of items" class="scroll-item">
@@ -32,12 +31,7 @@
     <h3>Horizontal Scroll</h3>
 
     <div class="scroll-container" appOverlayScrollSync>
-      <div
-        appOverlayScroll
-        scrollId="first-horizontal"
-        syncAxis="horizontal"
-        class="horizontal-scroll"
-      >
+      <div overlay-scrollbars class="horizontal-scroll">
         <div class="horizontal-content">
           <div *ngFor="let item of items" class="horizontal-item">
             {{ item }}
@@ -45,12 +39,7 @@
         </div>
       </div>
 
-      <div
-        appOverlayScroll
-        scrollId="first-horizontal"
-        syncAxis="horizontal"
-        class="horizontal-scroll"
-      >
+      <div overlay-scrollbars class="horizontal-scroll">
         <div class="horizontal-content">
           <div *ngFor="let item of items" class="horizontal-item">
             {{ item }}
@@ -61,12 +50,11 @@
   </div>
 
   <!-- Both Directions Example -->
-
   <div>
     <h3>Both</h3>
 
-    <div class="scroll-container" appOverlayScrollSync syncAxis="vertical">
-      <div appOverlayScroll scrollId="first-both" class="both-scroll">
+    <div class="scroll-container" appOverlayScrollSync syncAxis="both">
+      <div overlay-scrollbars class="both-scroll">
         <div class="both-content">
           <table>
             <tr *ngFor="let row of tableData">
@@ -76,7 +64,7 @@
         </div>
       </div>
 
-      <div appOverlayScroll scrollId="second-both" class="both-scroll">
+      <div overlay-scrollbars class="both-scroll">
         <div class="both-content">
           <table>
             <tr *ngFor="let row of tableData">

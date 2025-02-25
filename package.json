@@ -20,6 +20,7 @@
     "@angular/router": "^18.0.0",
     "iscroll": "^5.2.0",
     "overlayscrollbars": "^2.11.0",
+    "overlayscrollbars-ngx": "^0.5.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
